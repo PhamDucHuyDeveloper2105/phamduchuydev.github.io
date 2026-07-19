@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.7. </b> "
 ---
 
-Sau khi hoàn tất việc triển khai **Dental Clinic Management System** lên AWS, bước cuối cùng là kiểm tra toàn bộ hệ thống để đảm bảo các dịch vụ hoạt động ổn định và có thể giao tiếp với nhau.
+Sau khi hoàn tất việc triển khai **English Study Online System** lên AWS, bước cuối cùng là kiểm tra toàn bộ hệ thống để đảm bảo các dịch vụ hoạt động ổn định và có thể giao tiếp với nhau.
 
 Trong phần này, chúng ta sẽ xác minh rằng Backend trên Amazon EC2 đã kết nối thành công với Amazon DynamoDB, Amazon S3, Amazon SES và Amazon SNS, đồng thời kiểm tra các chức năng chính của hệ thống.
 
@@ -51,4 +51,4 @@ Nếu người dùng nhận được email thông báo trong Gmail, chứng tỏ
 ---
 
 
-Sau khi hoàn thành các bước kiểm tra trên, hệ thống **Dental Clinic Management System** đã được triển khai thành công trên nền tảng AWS. Backend hoạt động ổn định trên Amazon EC2 và có thể kết nối với Amazon DynamoDB, Amazon S3, Amazon SES và Amazon SNS để đáp ứng đầy đủ các chức năng của hệ thống.
+Sau khi hoàn thành các bước kiểm tra trên, hệ thống **English Study Online System** đã được triển khai thành công trên nền tảng AWS. Backend hoạt động ổn định trên Amazon EC2 và có thể kết nối với Amazon DynamoDB, Amazon S3, Amazon SES và Amazon SNS để đáp ứng đầy đủ các chức năng của hệ thống.

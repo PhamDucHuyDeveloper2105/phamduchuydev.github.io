@@ -49,7 +49,7 @@ This instance type is suitable for practice and test deployment environments.
 In the **Key pair (login)** section, select the previously created Key Pair:
 
 ```text
-keydental
+keyenglishstudy
 ```
 
 This Key Pair is used to SSH connect to the EC2 Instance after the server is initialized.

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-In this section, we will deploy the **Spring Boot Backend** of the **Dental Clinic Management System** to **Amazon EC2**. After successful deployment, the Backend will connect to AWS services such as **Amazon DynamoDB**, **Amazon S3**, **Amazon SES**, and **Amazon SNS** to provide full system functionality.
+In this section, we will deploy the **Spring Boot Backend** of the **English Study Online System** to **Amazon EC2**. After successful deployment, the Backend will connect to AWS services such as **Amazon DynamoDB**, **Amazon S3**, **Amazon SES**, and **Amazon SNS** to provide full system functionality.
 
 ---
 
@@ -16,7 +16,7 @@ Log in to the **AWS Management Console**, search for **Amazon EC2**, and select 
 
 Configure the EC2 as follows:
 
-- **Name:** Dental-Backend
+- **Name:** EnglishStudy-Backend
 - **Amazon Machine Image (AMI):** Amazon Linux 2023
 - **Instance type:** t3.micro
 - **Key pair:** Use or create a new Key Pair to connect via SSH.
@@ -38,7 +38,7 @@ After EC2 enters **Running** mode, use **EC2 Instance Connect** or SSH to connec
 Example:
 
 ```bash
-ssh -i keydental.pem ec2-user@<Public-IP>
+ssh -i keyenglishstudy.pem ec2-user@<Public-IP>
 ```
 
 After a successful connection, update the system and install Docker to prepare for application deployment.
@@ -52,8 +52,8 @@ Upload the backend source code or Docker image to EC2.
 Next, start the application using Docker:
 
 ```bash
-docker build -t dental-backend .
-docker run -d -p 8080:8080 --env-file .env dental-backend
+docker build -t englishstudy-backend .
+docker run -d -p 8080:8080 --env-file .env englishstudy-backend
 ```
 
 After the application starts successfully, the backend will automatically connect to:

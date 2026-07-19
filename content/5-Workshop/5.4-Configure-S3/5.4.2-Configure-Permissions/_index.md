@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.2. </b> "
 ---
 
-In the **Dental Clinic Management System**, securing image data (such as personal photos of doctors and patients) is crucial. Therefore, the system does not allow public access but uses a dynamic access granting mechanism via the backend.
+In the **English Study Online System**, securing image data (such as personal photos of teachers and students) is crucial. Therefore, the system does not allow public access but uses a dynamic access granting mechanism via the backend.
 
 ### 1. Bucket Security Policy
 
@@ -14,7 +14,7 @@ In the Bucket creation step, we kept the default setting of **Block all public a
 
 This means that no one on the internet can directly view or download images from Amazon S3 using the original URL. Attempts to access will result in Amazon S3 blocking and returning an **Access Denied** error.
 
-Only the backend application (via the IAM User `dental-backend-user` with `AmazonS3FullAccess` permissions) can legitimately communicate with, read, and write files to this Bucket.
+Only the backend application (via the IAM User `englishstudy-backend-user` with `AmazonS3FullAccess` permissions) can legitimately communicate with, read, and write files to this Bucket.
 
 ### 2. Granting Display Permissions Using Pre-signed URLs
 

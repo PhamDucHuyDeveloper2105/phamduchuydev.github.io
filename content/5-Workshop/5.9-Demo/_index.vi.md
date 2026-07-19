@@ -17,4 +17,4 @@ Mã nguồn đầy đủ của dự án được lưu trữ trên GitHub:
 
 Video Demo, hình ảnh và các tài liệu liên quan được lưu trữ trên Google Drive:
 
-👉 [Xem Demo trên Google Drive](https://drive.google.com/drive/folders/1L7NqSM2MdJnN5a6hC18F9Xfxr3FsoMvX?usp=sharing)
+👉 

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.7. </b> "
 ---
 
-After completing the deployment of the **Dental Clinic Management System** to AWS, the final step is to test the entire system to ensure that the services are stable and can communicate with each other.
+After completing the deployment of the **English Study Online System** to AWS, the final step is to test the entire system to ensure that the services are stable and can communicate with each other.
 
 In this section, we will verify that the Amazon EC2 Backend has successfully connected to Amazon DynamoDB, Amazon S3, Amazon SES, and Amazon SNS, and test the main functions of the system.
 
@@ -50,4 +50,4 @@ If the user receives a notification email in Gmail, it proves that Amazon SES ha
 
 ---
 
-After completing the above checks, the **Dental Clinic Management System** has been successfully deployed on the AWS platform. The backend is stable on Amazon EC2 and can connect to Amazon DynamoDB, Amazon S3, Amazon SES, and Amazon SNS to fully support the system's functions.
+After completing the above checks, the **English Study Online System** has been successfully deployed on the AWS platform. The backend is stable on Amazon EC2 and can connect to Amazon DynamoDB, Amazon S3, Amazon SES, and Amazon SNS to fully support the system's functions.

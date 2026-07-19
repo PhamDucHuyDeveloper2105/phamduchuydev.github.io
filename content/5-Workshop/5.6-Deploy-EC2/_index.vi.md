@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-Trong phần này, chúng ta sẽ triển khai **Backend Spring Boot** của **Dental Clinic Management System** lên **Amazon EC2**. Sau khi triển khai thành công, Backend sẽ kết nối với các dịch vụ AWS như **Amazon DynamoDB**, **Amazon S3**, **Amazon SES** và **Amazon SNS** để cung cấp đầy đủ các chức năng của hệ thống.
+Trong phần này, chúng ta sẽ triển khai **Backend Spring Boot** của **English Study Online System** lên **Amazon EC2**. Sau khi triển khai thành công, Backend sẽ kết nối với các dịch vụ AWS như **Amazon DynamoDB**, **Amazon S3**, **Amazon SES** và **Amazon SNS** để cung cấp đầy đủ các chức năng của hệ thống.
 
 ---
 
@@ -16,7 +16,7 @@ Trong phần này, chúng ta sẽ triển khai **Backend Spring Boot** của **D
 
 Cấu hình EC2 như sau:
 
-- **Name:** Dental-Backend
+- **Name:** EnglishStudy-Backend
 - **Amazon Machine Image (AMI):** Amazon Linux 2023
 - **Instance type:** t3.micro
 - **Key pair:** Sử dụng hoặc tạo mới Key Pair để kết nối SSH.
@@ -38,7 +38,7 @@ Sau khi EC2 chuyển sang trạng thái **Running**, sử dụng **EC2 Instance 
 Ví dụ:
 
 ```bash
-ssh -i keydental.pem ec2-user@<Public-IP>
+ssh -i keyenglishstudy.pem ec2-user@<Public-IP>
 ```
 
 Sau khi kết nối thành công, cập nhật hệ thống và cài đặt Docker để chuẩn bị triển khai ứng dụng.
@@ -53,8 +53,8 @@ Upload source code hoặc Docker Image của Backend lên EC2.
 Tiếp theo, khởi động ứng dụng bằng Docker:
 
 ```bash
-docker build -t dental-backend .
-docker run -d -p 8080:8080 --env-file .env dental-backend
+docker build -t englishstudy-backend .
+docker run -d -p 8080:8080 --env-file .env englishstudy-backend
 ```
 
 Sau khi ứng dụng khởi động thành công, Backend sẽ tự động kết nối đến:

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.2. </b> "
 ---
 
-Trong hệ thống **Dental Clinic Management System**, việc bảo mật dữ liệu hình ảnh (như ảnh cá nhân của bác sĩ, bệnh nhân) là rất quan trọng. Do đó, hệ thống không mở quyền truy cập công khai (Public Access) mà sử dụng cơ chế cấp quyền truy cập động thông qua Backend.
+Trong hệ thống **English Study Online System**, việc bảo mật dữ liệu hình ảnh (như ảnh cá nhân của giáo viên, học viên) là rất quan trọng. Do đó, hệ thống không mở quyền truy cập công khai (Public Access) mà sử dụng cơ chế cấp quyền truy cập động thông qua Backend.
 
 ### 1. Chính sách bảo mật của Bucket
 
@@ -14,7 +14,7 @@ Trong hệ thống **Dental Clinic Management System**, việc bảo mật dữ 
 
 Điều này có nghĩa là không ai trên Internet có thể xem hoặc tải trực tiếp ảnh từ Amazon S3 bằng URL gốc. Nếu cố tình truy cập, Amazon S3 sẽ chặn và trả về lỗi **Access Denied**. 
 
-Chỉ có ứng dụng Backend (thông qua IAM User `dental-backend-user` với quyền `AmazonS3FullAccess`) mới có thể giao tiếp, đọc và ghi file vào Bucket này một cách hợp lệ.
+Chỉ có ứng dụng Backend (thông qua IAM User `englishstudy-backend-user` với quyền `AmazonS3FullAccess`) mới có thể giao tiếp, đọc và ghi file vào Bucket này một cách hợp lệ.
 
 ### 2. Cấp quyền hiển thị bằng Pre-signed URL
 

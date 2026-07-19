@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.1. </b> "
 ---
 
-Trong bước này, chúng ta sẽ tạo một **Amazon EC2 Instance** để triển khai Backend Spring Boot của hệ thống **Dental Clinic Management System**.
+Trong bước này, chúng ta sẽ tạo một **Amazon EC2 Instance** để triển khai Backend Spring Boot của hệ thống **English Study Online System**.
 
 ### Truy cập Amazon EC2
 
@@ -19,7 +19,7 @@ Tại menu bên trái, chọn **Instances**, sau đó nhấn **Launch instances*
 Tại phần **Name and tags**, nhập tên Instance:
 
 ```text
-Dental-Backend
+EnglishStudy-Backend
 ```
 
 Tên này giúp dễ dàng nhận biết máy chủ dùng để triển khai Backend của hệ thống.
@@ -49,7 +49,7 @@ Instance type này phù hợp cho môi trường thực hành và triển khai t
 Tại phần **Key pair (login)**, chọn Key Pair đã tạo trước đó:
 
 ```text
-keydental
+keyenglishstudy
 ```
 
 Key Pair này được sử dụng để kết nối SSH vào EC2 Instance sau khi máy chủ được khởi tạo.
