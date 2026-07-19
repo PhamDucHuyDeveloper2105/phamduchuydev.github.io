@@ -19,4 +19,3 @@ The complete source code of the project is available on GitHub:
 
 The project demonstration video, screenshots, and related documents are available on Google Drive:
 
-👉 
