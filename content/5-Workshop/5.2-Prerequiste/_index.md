@@ -6,36 +6,47 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-In this section, we will prepare the required AWS resources for deploying the **Dental Clinic Management System**.
+In this section, we will prepare the essential tools and resources needed to build an online English learning project.
 
-#### Prepare an AWS Account
+#### Prepare the Development Environment
 
-Sign in to the **AWS Management Console** and select the **Asia Pacific (Singapore) - ap-southeast-1** Region to ensure that all resources are deployed in the same Region.
+Make sure your computer has the necessary tools installed, such as:
 
-#### Prepare an IAM User
+- A code editor like VS Code
+- Git for version control
+- Node.js or Python, depending on the chosen technology stack
+- A browser for testing the web application
 
-Create or use an IAM User named **dental-backend-user** and attach the following AWS Managed Policies:
+#### Prepare the Project Structure
 
-- AmazonEC2FullAccess
-- AmazonDynamoDBFullAccess
-- AmazonS3FullAccess
-- AmazonSESFullAccess
-- CloudWatchFullAccess
+Create a clear project structure so that lessons, exercises, user accounts, and progress tracking can be organized efficiently.
 
-![create stack](/cloud/images/5-Workshop/5.2-Prerequisite/IAM.png)
+#### Prepare the Main Features
 
-These permissions allow the IAM User to deploy and manage the AWS services required by the system.
+Before development begins, define the core features of the platform, such as:
 
-#### Prepare AWS Resources
+- User registration and login
+- Vocabulary and grammar lessons
+- Listening and speaking practice
+- Quizzes and progress tracking
+- An admin dashboard for managing content
 
-Before deploying the application, ensure that the following AWS services are available:
+#### Prepare the Learning Content
 
-- Amazon EC2 for deploying the Spring Boot backend.
-- Amazon DynamoDB for storing application data.
-- Amazon S3 for storing images and files.
-- Amazon SES for sending appointment confirmation emails.
-- Amazon CloudWatch for monitoring and logging system activities.
+Collect or design the initial learning materials, including:
+
+- Beginner, intermediate, and advanced lessons
+- Example sentences and pronunciation guides
+- Practice exercises and answer keys
+
+#### Prepare the Deployment Plan
+
+Choose a suitable hosting solution for publishing the project online, such as:
+
+- Vercel or Netlify for the frontend
+- Railway, Render, or AWS for backend services
+- A database such as Supabase, Firebase, or PostgreSQL
 
 #### Verify the Environment
 
-After completing the preparation steps, verify that the IAM User has the required permissions and that all AWS services are ready before proceeding with the deployment in the following sections.
+After completing the preparation steps, confirm that all tools, content, and deployment services are ready before starting the implementation of the online English learning platform.

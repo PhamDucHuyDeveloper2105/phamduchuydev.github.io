@@ -6,39 +6,34 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Deploying the Dental Clinic Management Website on AWS
+# Deploying an Online English Learning Platform on AWS
 
 #### Overview
 
-In this workshop, I will demonstrate the deployment process of the **Dental Clinic Management Website** on the **Amazon Web Services (AWS)** cloud platform.
+In this workshop, I will guide you through the deployment process of an **online English learning platform** on the **Amazon Web Services (AWS)** cloud platform.
 
-The project is designed to **address the limitations of traditional dental clinic management**, including:
+The project is designed to solve common problems in online education, such as:
 
-- Managing appointments manually using paper or spreadsheets, which can easily lead to scheduling conflicts and data loss.
-- Requiring patients to call or visit the clinic directly to book appointments, resulting in inconvenience for both patients and clinic staff.
-- Difficulty in managing dentists, services, appointments, and patient information within a centralized system.
-- Limited capability to monitor system performance and application health as the number of users increases.
-- Challenges in scaling and maintaining applications deployed on traditional on-premises infrastructure.
+- Managing lessons, quizzes, and user progress in a centralized system.
+- Providing a scalable platform that can support many learners at the same time.
+- Storing learning content and media files securely in the cloud.
+- Sending notifications and emails for important updates and user actions.
+- Improving reliability and performance through cloud-based infrastructure.
 
-To overcome these challenges, the system is built using a **3-Tier Architecture**, with **ReactJS** as the Frontend, **Spring Boot** as the Backend, and **Amazon DynamoDB** as the NoSQL database. Deploying the application on AWS provides improved scalability, high availability, enhanced security, and simplified infrastructure management.
+To build this system, I use a modern **3-tier architecture** with **React** for the frontend, **Spring Boot** for the backend, and **Amazon DynamoDB** for data storage. Deploying the application on AWS helps improve scalability, availability, security, and maintainability.
 
-Throughout this workshop, readers will learn how to deploy the application step by step on AWS, including preparing the cloud environment, deploying the Frontend and Backend, configuring database and storage services, implementing security features, monitoring system performance, testing the application, and cleaning up AWS resources after deployment.
+Throughout this workshop, readers will learn how to prepare the cloud environment, configure core AWS services, deploy the backend, test the system, and clean up resources after the project is complete.
 
 The AWS services used in this workshop include:
 
 - Amazon EC2
-- AWS Amplify
 - Amazon DynamoDB
 - Amazon S3
-- Amazon CloudFront
-- Amazon Route 53
-- AWS WAF
-- AWS Secrets Manager
-- AWS Key Management Service (KMS)
-- Amazon CloudWatch
-- Amazon SNS
 - Amazon SES
-- AWS Identity and Access Management (IAM)
+- Amazon SNS
+- Amazon CloudWatch
+- AWS IAM
+- AWS Secrets Manager
 
 #### Contents
 

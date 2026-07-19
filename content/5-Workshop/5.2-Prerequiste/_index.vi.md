@@ -6,57 +6,47 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-Trong phần này, chúng ta sẽ chuẩn bị các tài nguyên AWS cần thiết để triển khai **Dental Clinic Management System**.
+Trong phần này, chúng ta sẽ chuẩn bị các công cụ và tài nguyên cần thiết để xây dựng một dự án học tiếng Anh online.
 
-#### Chuẩn bị tài khoản AWS
+#### Chuẩn bị môi trường phát triển
 
-Đăng nhập vào **AWS Management Console** và chọn Region **Asia Pacific (Singapore) - ap-southeast-1** để đảm bảo tất cả tài nguyên được triển khai trong cùng một khu vực.
+Đảm bảo máy tính của bạn đã cài đặt những công cụ cần thiết, chẳng hạn như:
 
-#### Chuẩn bị IAM User
+- Một trình soạn thảo mã nguồn như VS Code
+- Git để quản lý phiên bản
+- Node.js hoặc Python, tùy thuộc vào công nghệ được chọn
+- Một trình duyệt để kiểm tra ứng dụng web
 
-Tạo hoặc sử dụng IAM User **dental-backend-user** và gắn các AWS Managed Policies sau:
+#### Chuẩn bị cấu trúc dự án
 
-- AmazonEC2FullAccess
-- AmazonDynamoDBFullAccess
-- AmazonS3FullAccess
-- AmazonSESFullAccess
-- CloudWatchFullAccess
-![create stack](/cloud/images/5-Workshop/5.2-Prerequisite/IAM.png)
-Các quyền này cho phép triển khai và quản lý các dịch vụ AWS được sử dụng trong hệ thống.
+Tạo cấu trúc dự án rõ ràng để các bài học, bài tập, tài khoản người dùng và theo dõi tiến độ có thể được tổ chức hiệu quả.
 
-#### Chuẩn bị tài nguyên AWS
+#### Chuẩn bị các tính năng chính
 
-Trước khi triển khai ứng dụng, cần chuẩn bị các dịch vụ sau:
+Trước khi bắt đầu phát triển, hãy xác định các tính năng cốt lõi của nền tảng, chẳng hạn như:
 
-- Amazon EC2 để triển khai Backend Spring Boot.
-- Amazon DynamoDB để lưu trữ dữ liệu.
-- Amazon S3 để lưu trữ hình ảnh và tệp tin.
-- Amazon SES để gửi email xác nhận lịch hẹn.
-- Amazon CloudWatch để theo dõi log và giám sát hệ thống.
-#### Chuẩn bị VPC
+- Đăng ký và đăng nhập người dùng
+- Bài học từ vựng và ngữ pháp
+- Luyện nghe và luyện nói
+- Câu hỏi kiểm tra và theo dõi tiến độ
+- Bảng điều khiển quản trị để quản lý nội dung
 
-Trong workshop này, hệ thống sử dụng VPC **PVH** với dải mạng:
+#### Chuẩn bị nội dung học tập
 
-- **VPC name:** PVH
-- **IPv4 CIDR:** 10.10.0.0/16
-- **Region:** Asia Pacific (Singapore) - ap-southeast-1
+Thu thập hoặc thiết kế các tài liệu học ban đầu, bao gồm:
 
-VPC này là môi trường mạng riêng để triển khai các tài nguyên AWS của hệ thống như EC2, Subnet, Security Group và Route Table.
+- Bài học ở mức cơ bản, trung cấp và nâng cao
+- Câu ví dụ và hướng dẫn phát âm
+- Bài tập thực hành và đáp án
 
-![VPC](/cloud/images/5-Workshop/5.1-Workshop-overview/vpc.png)
+#### Chuẩn bị kế hoạch triển khai
 
-#### Chuẩn bị Route Table
+Chọn một giải pháp lưu trữ phù hợp để công khai dự án lên mạng, chẳng hạn như:
 
-Route Table được sử dụng để điều hướng lưu lượng mạng giữa các Subnet và Internet Gateway.
+- Vercel hoặc Netlify cho giao diện người dùng
+- Railway, Render hoặc AWS cho dịch vụ backend
+- Cơ sở dữ liệu như Supabase, Firebase hoặc PostgreSQL
 
-Trong hệ thống, VPC **PVH** có các Route Table chính:
-
-- **Route Table Public:** dùng cho Public Subnet, cho phép EC2 truy cập Internet thông qua Internet Gateway.
-- **Route table-Private:** dùng cho Private Subnet, phục vụ các tài nguyên nội bộ.
-
-Khi triển khai Backend trên EC2 và cần truy cập từ Internet, Instance nên được đặt trong **Public Subnet** và sử dụng **Route Table Public**.
-
-![Route Table](/cloud/images/5-Workshop/5.1-Workshop-overview/router.png)
 #### Kiểm tra môi trường
 
-Sau khi hoàn tất các bước trên, kiểm tra IAM User và các dịch vụ AWS đã sẵn sàng trước khi bắt đầu triển khai hệ thống ở các phần tiếp theo.
+Sau khi hoàn tất các bước chuẩn bị, hãy xác nhận rằng tất cả công cụ, nội dung và dịch vụ triển khai đều sẵn sàng trước khi bắt đầu xây dựng nền tảng học tiếng Anh online.

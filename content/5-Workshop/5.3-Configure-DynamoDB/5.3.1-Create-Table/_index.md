@@ -1,17 +1,16 @@
 ﻿---
-title : "Create DynamoDB Table"
+title : "Create DynamoDB Tables"
 date : 2024-01-01
 weight : 1
 chapter : false
 pre : " <b> 5.3.1. </b> "
 ---
 
-In the **Dental Clinic Management System**, **Amazon DynamoDB** tables are not manually created on the AWS Console but are automatically initialized through the Spring Boot backend source code.
+In this online English learning project, **Amazon DynamoDB** tables are not created manually in the AWS Console. Instead, they are initialized automatically when the Spring Boot backend starts.
 
-The backend uses the `DynamoDbTableInitializer` class to check and create the necessary tables when the application starts.
+The backend uses a class named `DynamoDbTableInitializer` to check whether the required tables already exist and create them if needed.
 
 ```java
-
 @Configuration
 public class DynamoDbTableInitializer {
 
@@ -24,42 +23,28 @@ public class DynamoDbTableInitializer {
     @PostConstruct
     public void createTables() {
         createTableIfNotExists("users", User.class);
-        createTableIfNotExists("invoices", Invoice.class);
+        createTableIfNotExists("lessons", Lesson.class);
+        createTableIfNotExists("quizzes", Quiz.class);
+        createTableIfNotExists("progress", Progress.class);
         createTableIfNotExists("feedbacks", Feedback.class);
-        createTableIfNotExists("doctor_schedules", DoctorSchedule.class);
-        createTableIfNotExists("doctors", Doctor.class);
-        createTableIfNotExists("services", DentalService.class);
-        createTableIfNotExists("consultations", Consultation.class);
-        createTableIfNotExists("blogs", Blog.class);
-        createTableIfNotExists("appointments", Appointment.class);
-        createTableIfNotExists("categories", Category.class);
-        createTableIfNotExists("specialties", Specialty.class);
-        createTableIfNotExists("clinics", Clinic.class);
     }
 }
 ```
 
-When the Spring Boot backend runs, the `@PostConstruct` annotation will automatically call the `createTables()` method. This method checks and creates DynamoDB tables if they do not already exist.
+When the Spring Boot application starts, the `@PostConstruct` annotation automatically triggers the `createTables()` method. This method ensures that the required DynamoDB tables are available before the system begins serving users.
 
 The tables created automatically include:
 
-| Table | Function |
-|-------|-----------|
-| users | Save user account information |
-| invoices | Save invoice information |
-| feedbacks | Save patient reviews |
-| doctor_schedules | Save doctor's schedule |
-| doctors | Save doctor information |
-| services | Save dental service information |
-| consultations | Save consultation requests |
-| blogs | Save blog posts |
-| appointments | Save appointment schedules |
-| categories | Save blog categories |
-| specialties | Save specialties |
-| clinics | Save clinic information |
+| Table | Purpose |
+|-------|---------|
+| users | Store user account information |
+| lessons | Store lesson content and topics |
+| quizzes | Store quiz questions and answers |
+| progress | Track learner progress and scores |
+| feedbacks | Store feedback from users |
 
-After the application starts successfully, access **AWS Console → DynamoDB → Tables** to check the tables that have been created.
+After the application starts successfully, open **AWS Console → DynamoDB → Tables** to verify that the tables have been created.
 
 ![DynamoDB Tables](/cloud/images/5-Workshop/5.1-Workshop-overview/dynamodb-tables.png)
 
-If the tables show **Active** status, the DynamoDB table initialization process is complete.
+If the tables appear with **Active** status, the DynamoDB initialization process is complete.

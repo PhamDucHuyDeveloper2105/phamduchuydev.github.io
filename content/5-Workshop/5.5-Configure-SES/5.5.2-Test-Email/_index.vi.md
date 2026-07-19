@@ -5,12 +5,13 @@ weight : 2
 chapter : false
 pre : " <b> 5.5.2. </b> "
 ---
+
 ### Kiểm tra gửi Email
 
-Sau khi hoàn tất cấu hình Amazon SES và kết nối Backend, tiến hành tạo hoặc cập nhật một lịch hẹn trong hệ thống để kiểm tra chức năng gửi email.
+Sau khi cấu hình Amazon SES và kết nối với backend, hãy tạo hoặc cập nhật một hành động trong hệ thống để kiểm tra chức năng gửi email.
 
-Nếu cấu hình chính xác, người nhận sẽ nhận được email thông báo được gửi từ hệ thống **Dental Clinic Management System**.
+Nếu thiết lập đúng, người nhận sẽ nhận được một email thông báo từ hệ thống học tiếng Anh online.
 
 ![Email Notification](/cloud/images/5-Workshop/5.1-Workshop-overview/nhangmail.png)
 
-Đến đây, chức năng gửi email của hệ thống đã được cấu hình và hoạt động thành công.
+Ở bước này, chức năng gửi email đã được cấu hình thành công và hoạt động đúng như mong đợi.

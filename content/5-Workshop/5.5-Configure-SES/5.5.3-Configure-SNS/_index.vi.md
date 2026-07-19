@@ -6,38 +6,39 @@ chapter : false
 pre : " <b> 5.5.3. </b> "
 ---
 
-Trong phần này, chúng ta sẽ cấu hình **Amazon SNS (Simple Notification Service)** để tự động gửi email thông báo (ví dụ: cảnh báo hệ thống, báo cáo) về địa chỉ Gmail của bạn.
+Trong phần này, chúng ta sẽ cấu hình **Amazon SNS** để tự động gửi email thông báo như cảnh báo hệ thống hoặc báo cáo đến địa chỉ Gmail của bạn.
 
 ### 1. Tạo SNS Topic
 
 1. Truy cập **AWS Management Console**, tìm kiếm **Amazon SNS** và chọn **Topics**.
-2. Nhấn nút **Create topic**.
-3. Tại phần **Type**, chọn **Standard**.
-4. Nhập **Name** (ví dụ: dental-system-alerts).
-5. Giữ nguyên các thông số mặc định và nhấn **Create topic.
+2. Nhấn **Create topic**.
+3. Ở phần **Type**, chọn **Standard**.
+4. Nhập **Name** như `english-study-alerts`.
+5. Giữ nguyên các cài đặt mặc định và nhấn **Create topic**.
 
-### 2. Đăng ký (Subscribe) Gmail nhận thông báo
+### 2. Đăng ký Gmail nhận thông báo
 
-Sau khi Topic được tạo, chúng ta cần thêm email sẽ nhận thông báo:
+Sau khi topic được tạo, hãy thêm địa chỉ email sẽ nhận thông báo:
 
-1. Trong giao diện chi tiết của Topic vừa tạo, chuyển sang tab **Subscriptions** và nhấn **Create subscription**.
-2. Tại ô **Protocol**, chọn **Email**.
-3. Tại ô **Endpoint**, nhập địa chỉ **Gmail** của bạn (ví dụ: your-email@gmail.com).
-4. Nhấn **Create subscription**.
+1. Mở topic vừa tạo và chuyển sang tab **Subscriptions**.
+2. Nhấn **Create subscription**.
+3. Ở **Protocol**, chọn **Email**.
+4. Ở **Endpoint**, nhập địa chỉ Gmail của bạn.
+5. Nhấn **Create subscription**.
 
-### 3. Xác nhận đăng ký (Confirm Subscription)
+### 3. Xác nhận đăng ký
 
 1. AWS SNS sẽ gửi một email xác nhận đến địa chỉ Gmail bạn vừa nhập.
-2. Mở hộp thư Gmail, tìm email có tiêu đề **AWS Notification - Subscription Confirmation**.
-3. Nhấn vào đường link **Confirm subscription** trong email.
-4. Quay lại AWS Console, kiểm tra Subscription sẽ chuyển từ trạng thái *Pending confirmation* sang **Confirmed**.
+2. Mở hộp thư và tìm email có tiêu đề **AWS Notification - Subscription Confirmation**.
+3. Nhấn vào liên kết **Confirm subscription**.
+4. Quay lại AWS Console, kiểm tra trạng thái sẽ chuyển từ *Pending confirmation* sang **Confirmed**.
 
-### 4. Gửi thử thông báo (Publish Message)
+### 4. Gửi thử thông báo
 
-1. Tại giao diện Topic trên AWS, nhấn nút **Publish message**.
-2. Nhập **Subject** (ví dụ: Test Alert từ Hệ thống Nha khoa).
-3. Nhập nội dung vào ô **Message body to send to the endpoint** (ví dụ: Hệ thống hoạt động bình thường!).
-4. Kéo xuống dưới cùng và nhấn **Publish message**.
-5. Kiểm tra hộp thư Gmail, bạn sẽ nhận được nội dung vừa gửi.
+1. Trên giao diện topic, nhấn **Publish message**.
+2. Nhập **Subject** như *Test Alert from English Study System*.
+3. Nhập nội dung tin nhắn, ví dụ: *The system is working normally!*.
+4. Nhấn **Publish message**.
+5. Kiểm tra hộp thư Gmail để xác nhận tin nhắn đã đến.
 
-Hệ thống SNS lúc này đã sẵn sàng để tích hợp với CloudWatch hoặc Backend để tự động gửi thông báo.
+Sau khi hoàn tất, hệ thống SNS đã sẵn sàng để tích hợp với CloudWatch hoặc backend để gửi thông báo tự động.

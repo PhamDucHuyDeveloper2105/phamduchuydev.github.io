@@ -6,41 +6,41 @@ chapter : false
 pre : " <b> 5.5. </b> "
 ---
 
-Trong **Dental Clinic Management System**, **Amazon SES** được sử dụng để gửi email xác nhận lịch hẹn và các thông báo đến người dùng, trong khi **Amazon SNS** được sử dụng để quản lý các thông báo thông qua mô hình Publish/Subscribe.
+Trong dự án học tiếng Anh online, **Amazon SES** được dùng để gửi email thông báo như xác nhận tài khoản hoặc cập nhật bài học, còn **Amazon SNS** được dùng để phát các thông báo theo mô hình Publish/Subscribe.
 
 ### 1. Cấu hình Amazon SES
 
-Đăng nhập vào **AWS Management Console**, tìm kiếm **Amazon SES** và chọn **Configuration → Identities**.
+Đăng nhập vào **AWS Management Console**, tìm kiếm **Amazon SES** và mở **Configuration → Identities**.
 
-Chọn **Create identity**, sau đó chọn **Email address** và nhập địa chỉ email sẽ được sử dụng để gửi thông báo từ hệ thống.
+Chọn **Create identity**, sau đó chọn **Email address** và nhập địa chỉ sẽ dùng để gửi thông báo từ hệ thống.
 
 ![Amazon SES Identity](/cloud/images/5-Workshop/5.1-Workshop-overview/SES.png)
 
-Sau khi tạo thành công, AWS sẽ gửi một email xác minh đến địa chỉ đã đăng ký. Mở email và chọn **Verify email address** để hoàn tất quá trình xác minh.
+Sau khi tạo, AWS sẽ gửi một email xác minh đến địa chỉ đó. Mở email và nhấn **Verify email address** để hoàn tất.
 
 ---
 
 ### 2. Cấu hình Amazon SNS
 
-Đăng nhập vào **AWS Management Console**, tìm kiếm **Amazon SNS** và chọn **Topics**.
+Mở **AWS Management Console**, tìm kiếm **Amazon SNS** và vào mục **Topics**.
 
-Chọn **Create topic**, chọn loại **Standard** và đặt tên Topic là:
+Chọn **Create topic**, chọn loại **Standard**, rồi đặt tên cho topic:
 
 ```text
-dental-clinic-notification
+english-study-notification
 ```
 
-Sau đó nhấn **Create topic** để tạo Topic.
+Sau đó nhấn **Create topic**.
 
 ![Amazon SNS Topic](/cloud/images/5-Workshop/5.1-Workshop-overview/SNS.png)
 
-Sau khi tạo thành công, hệ thống sẽ cấp một **Topic ARN**, được sử dụng để Backend gửi thông báo đến Amazon SNS.
+Sau khi topic được tạo, AWS sẽ cấp một **Topic ARN** để backend sử dụng để phát thông báo.
 
 ---
 
 ### 3. Cấu hình Backend
 
-Cập nhật file `application.yml` để khai báo các thông tin cần thiết:
+Cập nhật file `application.yml` của backend với các giá trị cần thiết:
 
 ```yaml
 aws:
@@ -56,6 +56,6 @@ aws:
 Trong đó:
 
 - `AWS_SES_SENDER_EMAIL`: Địa chỉ email đã được xác minh trên Amazon SES.
-- `AWS_SNS_TOPIC_ARN`: ARN của Topic đã tạo trên Amazon SNS.
+- `AWS_SNS_TOPIC_ARN`: ARN của topic SNS đã tạo ở bước trước.
 
-Sau khi hoàn tất cấu hình và khởi động lại Backend, hệ thống đã sẵn sàng gửi email thông qua Amazon SES và phát thông báo thông qua Amazon SNS.
+Sau khi cấu hình xong và khởi động lại backend, hệ thống sẽ sẵn sàng gửi email qua Amazon SES và phát thông báo qua Amazon SNS.

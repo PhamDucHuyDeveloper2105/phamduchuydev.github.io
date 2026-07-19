@@ -6,30 +6,28 @@ chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-Trong **Dental Clinic Management System**, **Amazon S3 (Simple Storage Service)** được sử dụng để lưu trữ các tệp hình ảnh của hệ thống như ảnh bác sĩ, ảnh dịch vụ và các tệp được người dùng tải lên.
+Trong dự án học tiếng Anh online, **Amazon S3** được sử dụng để lưu trữ các tệp hình ảnh như ảnh minh họa bài học, ảnh đại diện người dùng và các file media được tải lên.
 
 ### 1. Tạo S3 Bucket
 
-Đăng nhập vào **AWS Management Console**, tìm kiếm **Amazon S3** và chọn **Buckets**.
+Đăng nhập vào **AWS Management Console**, tìm kiếm **Amazon S3** và mở trang **Buckets**.
 
-Tại giao diện Amazon S3, chọn **Create bucket** để tạo một Bucket mới.
+Chọn **Create bucket** và nhập các thông tin cần thiết:
 
-Thiết lập các thông tin cơ bản:
-
-- **Bucket name:** `dental-service-images-huy`
+- **Bucket name:** `english-study-online-images-huy`
 - **AWS Region:** `Asia Pacific (Singapore) - ap-southeast-1`
 
-Sau khi hoàn tất cấu hình, chọn **Create bucket**.
+Sau khi hoàn tất thiết lập, nhấn **Create bucket**.
 
 ![Amazon S3 Bucket](/cloud/images/5-Workshop/5.1-Workshop-overview/S3.png)
 
-Sau khi tạo thành công, Bucket `dental-service-images-huy` sẽ xuất hiện trong danh sách Buckets và sẵn sàng để sử dụng.
+Sau khi tạo thành công, bucket sẽ xuất hiện trong danh sách và sẵn sàng để sử dụng.
 
 ---
 
-### 2. Cấu hình Amazon S3 trong Backend
+### 2. Cấu hình S3 trong Backend
 
-Sau khi tạo Bucket, cấu hình thông tin Bucket trong file `application.yml` của Backend.
+Sau khi tạo bucket, hãy thêm thông tin cấu hình vào file `application.yml` của backend:
 
 ```yaml
 aws:
@@ -41,9 +39,9 @@ aws:
 
 Trong đó:
 
-- `AWS_REGION`: Region triển khai dịch vụ AWS.
-- `AWS_S3_BUCKET_NAME`: Tên Bucket Amazon S3 (`dental-service-images-huy`).
+- `AWS_REGION`: Vùng AWS được sử dụng để triển khai dịch vụ.
+- `AWS_S3_BUCKET_NAME`: Tên của bucket S3, ví dụ `english-study-online-images-huy`.
 
-Backend sẽ sử dụng các thông tin này để kết nối tới Amazon S3 và thực hiện các thao tác upload, download và quản lý hình ảnh của hệ thống.
+Backend sẽ dùng các giá trị này để kết nối với Amazon S3 và thực hiện các thao tác upload, download và quản lý file.
 
-Sau khi hoàn tất cấu hình và khởi động ứng dụng, Backend có thể lưu trữ và truy xuất hình ảnh trực tiếp từ Amazon S3.
+Sau khi cấu hình xong và ứng dụng chạy, hệ thống có thể lưu trữ và lấy lại các tệp trực tiếp từ S3.

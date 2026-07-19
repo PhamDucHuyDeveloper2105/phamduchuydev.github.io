@@ -6,30 +6,28 @@ chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-In the **English Study Online System**, **Amazon S3 (Simple Storage Service)** is used to store system image files such as teacher photos, course photos, and user-uploaded files.
+In the online English learning project, **Amazon S3** is used to store image files such as lesson thumbnails, user avatars, and other uploaded media.
 
-### 1. Creating an S3 Bucket
+### 1. Create an S3 Bucket
 
-Log in to the **AWS Management Console**, search for **Amazon S3**, and select **Buckets**.
+Sign in to the **AWS Management Console**, search for **Amazon S3**, and open the **Buckets** page.
 
-In the Amazon S3 interface, select **Create bucket** to create a new bucket.
+Choose **Create bucket** and enter the required information:
 
-Set up the basic information:
-
-- **Bucket name:** `dental-service-images-huy`
+- **Bucket name:** `english-study-online-images-huy`
 - **AWS Region:** `Asia Pacific (Singapore) - ap-southeast-1`
 
-After completing the configuration, select **Create bucket**.
+After completing the setup, click **Create bucket**.
 
 ![Amazon S3 Bucket](/cloud/images/5-Workshop/5.1-Workshop-overview/S3.png)
 
-After successful creation, the `dental-service-images-huy` Bucket will appear in the Buckets list and be ready for use.
+Once the bucket is created successfully, it will appear in the bucket list and be ready for use.
 
 ---
 
-### 2. Configuring Amazon S3 in the Backend
+### 2. Configure S3 in the Backend
 
-After creating the Bucket, configure the Bucket information in the `application.yml` file of the Backend.
+After creating the bucket, add its configuration to the backend `application.yml` file:
 
 ```yaml
 aws:
@@ -41,10 +39,9 @@ aws:
 
 Where:
 
-- `AWS_REGION`: The region where the AWS service is deployed.
+- `AWS_REGION`: The AWS region used for deployment.
+- `AWS_S3_BUCKET_NAME`: The name of the S3 bucket, such as `english-study-online-images-huy`.
 
-- `AWS_S3_BUCKET_NAME`: The name of the Amazon S3 Bucket (`english-study-online-images-huy`).
+The backend will use these values to connect to Amazon S3 and handle upload, download, and file management operations.
 
-The backend will use this information to connect to Amazon S3 and perform image upload, download, and management operations within the system.
-
-After completing the configuration and launching the application, the backend can store and retrieve images directly from Amazon S3.
+Once the configuration is complete and the application is running, the system can store and retrieve files directly from S3.

@@ -7,11 +7,11 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Lý Thiên Phú 
+&emsp; **Họ và tên:** Phạm Đức Huy 
 
-&emsp; **Số điện thoại:** 0843542924
+&emsp; **Số điện thoại:** 0888821359
 
-&emsp; **Email:** lythienphu2003@gmail.com
+&emsp; **Email:** phamduchuy1011@gmail.com
 
 &emsp; **Trường:** Đại học Công Nghệ Thành Phố Hồ Chí Minh 
 
@@ -24,8 +24,8 @@ chapter: false
 &emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
 
 &emsp; **Thời gian thực tập:** Từ ngày 17/04/2025 đến ngày 30/07/2026
-
-![Ảnh đại diện của bạn](/cloud/images/avatar1.png)
+themes/hugo-theme-learn/images/av1.jpg
+![Ảnh đại diện của bạn]()
 
 
 

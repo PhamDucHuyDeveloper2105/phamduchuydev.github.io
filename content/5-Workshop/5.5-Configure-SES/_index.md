@@ -6,41 +6,41 @@ chapter : false
 pre : " <b> 5.5. </b> "
 ---
 
-In the Dental Clinic Management System, Amazon SES is used to send appointment confirmation emails and notifications to users, while Amazon SNS is used to manage notifications via the Publish/Subscribe model.
+In the online English learning project, **Amazon SES** is used to send email notifications such as account confirmation or course updates, while **Amazon SNS** is used to deliver messages through the Publish/Subscribe model.
 
-### 1. Configuring Amazon SES
+### 1. Configure Amazon SES
 
-Log in to the AWS Management Console, search for Amazon SES, and select Configuration → Identities.
+Sign in to the **AWS Management Console**, search for **Amazon SES**, and open **Configuration → Identities**.
 
-Select Create identity, then select Email address and enter the email address that will be used to send notifications from the system.
+Choose **Create identity**, select **Email address**, and enter the address that will be used to send system notifications.
 
 ![Amazon SES Identity](/cloud/images/5-Workshop/5.1-Workshop-overview/SES.png)
 
-After successful creation, AWS will send a verification email to the registered address. Open the email and select Verify email address to complete the verification process.
+After creation, AWS sends a verification email to that address. Open the email and click **Verify email address** to complete the setup.
 
 ---
 
-### 2. Configuring Amazon SNS
+### 2. Configure Amazon SNS
 
-Log in to the **AWS Management Console**, search for **Amazon SNS**, and select **Topics**.
+Open the **AWS Management Console**, search for **Amazon SNS**, and go to **Topics**.
 
 Select **Create topic**, choose the **Standard** type, and name the topic:
 
 ```text
-dental-clinic-notification
+english-study-notification
 ```
 
-Then click **Create topic** to create the topic.
+Then click **Create topic**.
 
 ![Amazon SNS Topic](/cloud/images/5-Workshop/5.1-Workshop-overview/SNS.png)
 
-After successful creation, the system will generate a **Topic ARN**, which is used by the backend to send notifications to Amazon SNS.
+Once the topic is created, AWS generates a **Topic ARN**, which the backend can use to publish notifications.
 
 ---
 
-### 3. Backend Configuration
+### 3. Configure the Backend
 
-Update the `application.yml` file to declare the necessary information:
+Update the backend `application.yml` file with the necessary values:
 
 ```yaml
 aws:
@@ -56,6 +56,6 @@ aws:
 Where:
 
 - `AWS_SES_SENDER_EMAIL`: The email address verified on Amazon SES.
-- `AWS_SNS_TOPIC_ARN`: The ARN of the Topic created on Amazon SNS.
+- `AWS_SNS_TOPIC_ARN`: The ARN of the SNS topic created earlier.
 
-After completing the configuration and restarting the Backend, the system is ready to send emails via Amazon SES and broadcast notifications via Amazon SNS.
+After completing the configuration and restarting the backend, the system will be ready to send emails through Amazon SES and publish notifications through Amazon SNS.
