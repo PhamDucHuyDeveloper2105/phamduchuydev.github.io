@@ -20,14 +20,14 @@ The project is designed to solve common problems in online education, such as:
 - Sending notifications and emails for important updates and user actions.
 - Improving reliability and performance through cloud-based infrastructure.
 
-To build this system, I use a modern **3-tier architecture** with **React** for the frontend, **Spring Boot** for the backend, and **Amazon DynamoDB** for data storage. Deploying the application on AWS helps improve scalability, availability, security, and maintainability.
+To build this system, I use a modern **3-tier architecture** with **React** for the frontend, **Spring Boot** for the backend, and **Amazon RDS** for data storage. Deploying the application on AWS helps improve scalability, availability, security, and maintainability.
 
 Throughout this workshop, readers will learn how to prepare the cloud environment, configure core AWS services, deploy the backend, test the system, and clean up resources after the project is complete.
 
 The AWS services used in this workshop include:
 
 - Amazon EC2
-- Amazon DynamoDB
+- Amazon RDS
 - Amazon S3
 - Amazon SES
 - Amazon SNS
@@ -39,7 +39,7 @@ The AWS services used in this workshop include:
 
 1. [Introduction](5.1-Workshop-overview/)
 2. [Prerequisites](5.2-Prerequiste/)
-3. [Configure DynamoDB](5.3-Configure-RDS-Database/)
+3. [Configure RDS Database](5.3-Configure-RDS-Database/)
 4. [Configure Amazon S3](5.4-Configure-S3/)
 5. [Configure Amazon SES & SNS](5.5-Configure-SES/)
 6. [Deploy Backend on EC2](5.6-Deploy-EC2/)
