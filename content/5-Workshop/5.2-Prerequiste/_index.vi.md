@@ -37,7 +37,7 @@ Thu thập hoặc thiết kế các tài liệu học ban đầu, bao gồm:
 
 - Bài học ở mức cơ bản, trung cấp và nâng cao
 - Câu ví dụ và hướng dẫn phát âm
-- Bài tập thực hành và đáp án
+- Bài tập thực hành và đáp an
 
 #### Chuẩn bị kế hoạch triển khai
 
