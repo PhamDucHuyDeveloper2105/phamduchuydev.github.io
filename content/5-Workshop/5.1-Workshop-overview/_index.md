@@ -23,7 +23,7 @@ The workshop covers the deployment and configuration of the following AWS servic
 - **AWS WAF** protects the application from common web attacks such as SQL Injection (SQLi) and Cross-Site Scripting (XSS).
 - **Amazon EC2** hosts the Spring Boot backend application and processes business logic through RESTful APIs.
 - **Application Load Balancer (ALB)** distributes incoming traffic to improve application availability and scalability.
-- **Amazon DynamoDB** stores application data, including user accounts, teachers, courses, and enrollment information.
+- **Amazon RDS (MySQL)** stores application data using a relational database, including user accounts, teachers, courses, and enrollment information.
 - **Amazon S3** stores static assets, uploaded images, and supporting documents.
 - **AWS Identity and Access Management (IAM)** manages authentication and authorization for AWS resources.
 - **AWS Secrets Manager** securely stores sensitive credentials and application secrets.
@@ -33,7 +33,7 @@ The workshop covers the deployment and configuration of the following AWS servic
 
 By following this workshop, readers will learn how to prepare the AWS environment, deploy both frontend and backend applications, configure database and storage services, implement security best practices, monitor system performance, and perform resource cleanup after deployment.
 
-![AWS Architecture](draw.io.png)
+![AWS Architecture](drawio.png)
 
 ### System Flow
 
@@ -53,4 +53,4 @@ By following this workshop, readers will learn how to prepare the AWS environmen
 
 8. During processing, **Amazon EC2** stores and retrieves images from **Amazon S3** and uses **Amazon SES** and **Amazon SNS** to send emails and notifications as needed.
 
-9. Finally, **Amazon EC2** reads and writes data to **Amazon DynamoDB**. **Amazon CloudWatch** monitors system activity and sends alerts via **Amazon SNS** when it detects problems or exceeds configured thresholds.
+9. Finally, **Amazon EC2** reads and writes data to **Amazon RDS (MySQL)**. **Amazon CloudWatch** monitors system activity and sends alerts via **Amazon SNS** when it detects problems or exceeds configured thresholds.
