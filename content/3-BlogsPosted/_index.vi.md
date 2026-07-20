@@ -1,16 +1,19 @@
 ---
-title: "Các bài blogs đã đăng"
+title: "Blogs Posted"
 date: 2024-01-01
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-###  [Blog 1 - LOAD TESTING TRÊN AWS: KHÔNG CHỈ KIỂM TRA WEBSITE CHẠY ĐƯỢC, MÀ CÒN KIỂM TRA HỆ THỐNG CHỊU TẢI TỐT HAY KHÔNG](3.1-Blog1/)
-Blog giới thiệu về Load Testing trên AWS, giúp đánh giá khả năng chịu tải và hiệu năng của website hoặc ứng dụng khi có nhiều người dùng truy cập đồng thời. Nội dung tập trung vào giải pháp Distributed Load Testing on AWS, cách AWS hỗ trợ triển khai kiểm thử tải, theo dõi kết quả và phát hiện sớm các điểm nghẽn để tối ưu hệ thống trước khi đưa vào vận hành thực tế.
+### [Blog 1 - LOAD TESTING ON AWS: KHÔNG CHỈ KIỂM TRA WEBSITE CÓ HOẠT ĐỘNG MÀ CÒN ĐÁNH GIÁ KHẢ NĂNG CHỊU TẢI](3.1-Blog1/)
 
-###  [Blog 2 - AWS WAF: LÁ CHẮN BẢO VỆ ỨNG DỤNG WEB KHỎI NHỮNG CUỘC TẤN CÔNG PHỔ BIẾN](3.2-Blog2/)
-Blog giới thiệu về AWS WAF và vai trò của dịch vụ này trong việc bảo vệ ứng dụng web trước các cuộc tấn công phổ biến như SQL Injection, Cross-Site Scripting (XSS) và bot độc hại. Đồng thời, bài viết trình bày cách AWS WAF hoạt động, khả năng kết hợp với các dịch vụ AWS như CloudFront, Application Load Balancer và API Gateway để tăng cường bảo mật, đảm bảo ứng dụng luôn an toàn và ổn định.
+Bài viết giới thiệu **Distributed Load Testing on AWS**, giải pháp giúp đánh giá hiệu năng, khả năng mở rộng và mức độ ổn định của website hoặc ứng dụng trước khi đưa vào môi trường thực tế. Nội dung trình bày cách AWS hỗ trợ mô phỏng hàng nghìn người dùng truy cập đồng thời, theo dõi hiệu năng hệ thống, phát hiện các điểm nghẽn và tối ưu tài nguyên nhằm đảm bảo ứng dụng có thể hoạt động ổn định khi lưu lượng truy cập tăng cao.
 
-###  [Blog 3 - AWS CODEPIPELINE: TỰ ĐỘNG HÓA QUÁ TRÌNH DEPLOY ỨNG DỤNG](3.3-Blog3/)
-Blog giới thiệu về AWS CodePipeline và vai trò của dịch vụ này trong việc tự động hóa quy trình CI/CD (Continuous Integration/Continuous Delivery) cho ứng dụng. Nội dung trình bày cách CodePipeline kết nối các giai đoạn như lấy mã nguồn, build, kiểm thử và triển khai, giúp rút ngắn thời gian phát hành, giảm lỗi do thao tác thủ công và nâng cao hiệu quả phát triển phần mềm.
+### [Blog 2 - AMAZON CLOUDFRONT: TĂNG TỐC PHÂN PHỐI NỘI DUNG TRÊN TOÀN CẦU](3.2-Blog2/)
+
+Bài viết giới thiệu **Amazon CloudFront**, dịch vụ Content Delivery Network (CDN) của AWS giúp tăng tốc độ tải website bằng cách phân phối nội dung thông qua mạng lưới Edge Location trên toàn thế giới. Nội dung giải thích cách CloudFront lưu trữ bộ nhớ đệm (Cache), giảm độ trễ khi truy cập, giảm tải cho máy chủ gốc và cải thiện trải nghiệm người dùng. Đồng thời, bài viết cũng đề cập đến khả năng tích hợp với các dịch vụ như Amazon S3, AWS WAF, AWS Shield và Amazon CloudWatch để xây dựng các ứng dụng web có hiệu năng cao và bảo mật tốt.
+
+### [Blog 3 - AMAZON RDS: ĐƠN GIẢN HÓA VIỆC QUẢN LÝ CƠ SỞ DỮ LIỆU QUAN HỆ TRÊN ĐÁM MÂY](3.3-Blog3/)
+
+Bài viết giới thiệu **Amazon Relational Database Service (Amazon RDS)**, dịch vụ cơ sở dữ liệu quan hệ được AWS quản lý hoàn toàn trên nền tảng đám mây. Nội dung trình bày cách Amazon RDS tự động hóa các tác vụ như cài đặt, sao lưu, cập nhật phiên bản, giám sát hiệu năng và mở rộng tài nguyên, giúp giảm đáng kể công việc quản trị cơ sở dữ liệu. Bài viết cũng giới thiệu các hệ quản trị cơ sở dữ liệu được hỗ trợ như MySQL, PostgreSQL, MariaDB, Microsoft SQL Server, Oracle Database và Amazon Aurora, đồng thời làm nổi bật vai trò của Amazon RDS trong việc xây dựng các ứng dụng có tính sẵn sàng cao, an toàn và dễ dàng mở rộng.

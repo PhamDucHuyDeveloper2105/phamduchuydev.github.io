@@ -6,12 +6,14 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
+### [Blog 1 - LOAD TESTING ON AWS: IT'S NOT JUST ABOUT WHETHER A WEBSITE WORKS, BUT WHETHER IT CAN HANDLE HEAVY TRAFFIC](3.1-Blog1/)
 
-###  [Blog 1 - LOAD TESTING ON AWS: IT'S NOT JUST ABOUT WHETHER A WEBSITE WORKS, BUT WHETHER IT CAN HANDLE HEAVY TRAFFIC](3.1-Blog1/)
-This blog post introduces Load Testing on AWS, which helps assess the load capacity and performance of a website or application when many users access it simultaneously. The content focuses on the Distributed Load Testing solution on AWS, how AWS supports load testing deployment, monitoring results, and early detection of bottlenecks to optimize the system before real-world operation.
+This blog post introduces **Distributed Load Testing on AWS**, a solution that helps evaluate the performance, scalability, and stability of web applications before they are deployed to production. The article explains how AWS enables users to simulate thousands of concurrent requests, execute distributed load tests, monitor system performance through AWS services, identify potential bottlenecks, and optimize application resources to ensure a reliable user experience during periods of heavy traffic.
 
-###  [Blog 2 - AWS WAF: A SHIELD PROTECTING WEB APPLICATIONS FROM COMMON ATTACKS](3.2-Blog2/)
-This blog post introduces AWS WAF and its role in protecting web applications against common attacks such as SQL Injection, Cross-Site Scripting (XSS), and malicious bots. It also explains how AWS WAF works, its integration with other AWS services like CloudFront, Application Load Balancer, and API Gateway to enhance security and ensure application safety and stability.
+### [Blog 2 - AMAZON CLOUDFRONT: DELIVERING CONTENT FASTER AROUND THE WORLD](3.2-Blog2/)
 
-###  [Blog 3 - AWS CODEPIPELINE: AUTOMATE YOUR APPLICATION DEPLOYMENT PROCESS](3.3-Blog3/)
-This blog post introduces AWS CodePipeline and its role in automating the CI/CD (Continuous Integration/Continuous Delivery) process for applications. It explains how CodePipeline connects stages such as source code fetching, building, testing, and deployment, helping to shorten release time, reduce errors caused by manual operations, and improve software development efficiency.
+This blog post introduces **Amazon CloudFront**, AWS's global Content Delivery Network (CDN) service that improves website performance by delivering content from edge locations located around the world. It explains how CloudFront caches static content, reduces latency, decreases the workload on origin servers, and enhances the browsing experience for users. The blog also discusses CloudFront's integration with services such as Amazon S3, AWS WAF, AWS Shield, and Amazon CloudWatch to build secure, scalable, and high-performance web applications.
+
+### [Blog 3 - AMAZON RDS: SIMPLIFYING RELATIONAL DATABASE MANAGEMENT IN THE CLOUD](3.3-Blog3/)
+
+This blog post introduces **Amazon Relational Database Service (Amazon RDS)**, a fully managed relational database service designed to simplify database administration in the AWS Cloud. The article explains how Amazon RDS automates routine tasks such as database provisioning, backups, software updates, monitoring, and scaling while supporting popular database engines including MySQL, PostgreSQL, MariaDB, Microsoft SQL Server, Oracle Database, and Amazon Aurora. It also highlights how Amazon RDS helps developers build secure, highly available, and scalable applications with reduced operational complexity.

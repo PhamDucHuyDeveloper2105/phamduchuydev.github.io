@@ -1,66 +1,73 @@
 ---
 title: "Blog 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# AWS WAF: LÁ CHẮN BẢO VỆ ỨNG DỤNG WEB KHỎI NHỮNG CUỘC TẤN CÔNG PHỔ BIẾN
+# AMAZON CLOUDFRONT: TĂNG TỐC WEBSITE VÀ CẢI THIỆN TRẢI NGHIỆM NGƯỜI DÙNG TOÀN CẦU
 
-Khi triển khai một website hoặc ứng dụng lên môi trường Internet, nhiều người thường tập trung vào việc tối ưu hiệu năng, mở rộng hệ thống hoặc cải thiện trải nghiệm người dùng.
+Khi xây dựng một website hoặc ứng dụng trực tuyến, tốc độ tải trang luôn là một trong những yếu tố quan trọng quyết định trải nghiệm của người dùng. Nếu nội dung được lưu trữ tại một máy chủ ở một khu vực duy nhất, người dùng ở các quốc gia khác sẽ phải mất nhiều thời gian hơn để truy cập do khoảng cách địa lý và độ trễ của mạng.
 
-Tuy nhiên, một yếu tố quan trọng không kém chính là bảo mật.
+Để giải quyết vấn đề này, AWS cung cấp **Amazon CloudFront** – dịch vụ Content Delivery Network (CDN) giúp phân phối nội dung đến người dùng thông qua mạng lưới các máy chủ biên (Edge Locations) được đặt tại nhiều quốc gia trên thế giới.
 
-Trong thực tế, các ứng dụng web luôn phải đối mặt với nhiều nguy cơ như SQL Injection, Cross-Site Scripting (XSS), Bot Traffic hoặc các cuộc tấn công từ chối dịch vụ (DDoS). Nếu không được bảo vệ đúng cách, những cuộc tấn công này có thể gây gián đoạn dịch vụ, ảnh hưởng đến dữ liệu và làm giảm trải nghiệm của người dùng.
+Thay vì luôn lấy dữ liệu từ máy chủ gốc (Origin Server), CloudFront sẽ lưu trữ tạm thời (Cache) các nội dung như hình ảnh, video, CSS, JavaScript hoặc tài liệu tĩnh tại các Edge Location gần người dùng nhất. Điều này giúp giảm thời gian phản hồi, giảm tải cho máy chủ và nâng cao hiệu năng của hệ thống.
 
-Để giải quyết bài toán này, AWS cung cấp dịch vụ AWS WAF (Web Application Firewall), giúp bảo vệ ứng dụng web khỏi các mối đe dọa phổ biến, đồng thời cho phép quản lý và xây dựng các chính sách bảo mật một cách linh hoạt.
+## CÁC TÍNH NĂNG NỔI BẬT
 
-Trong thực tế, AWS WAF thường được triển khai cùng với Application Load Balancer (ALB), Amazon CloudFront, API Gateway và AWS Shield để xây dựng một hệ thống bảo mật nhiều lớp cho ứng dụng.
+<br>&emsp;• **Phân phối nội dung với tốc độ cao**
 
-NHỮNG ĐIỂM NỔI BẬT:
-<br>&emsp;• Bảo vệ ứng dụng khỏi các cuộc tấn công phổ biến:
-<br>&emsp;AWS WAF có khả năng phát hiện và ngăn chặn nhiều hình thức tấn công thường gặp như SQL Injection, Cross-Site Scripting (XSS), Local File Inclusion và các request độc hại khác trước khi chúng đến ứng dụng.
-<br>&emsp;• Tạo luật bảo mật tùy chỉnh:
-<br>&emsp;Người dùng có thể xây dựng các rule tùy chỉnh dựa trên địa chỉ IP, quốc gia, header HTTP, URI hoặc nhiều điều kiện khác nhằm đáp ứng yêu cầu bảo mật riêng của từng hệ thống.
-<br>&emsp;• Tích hợp với nhiều dịch vụ AWS:
-<br>&emsp;AWS WAF có thể hoạt động cùng với Amazon CloudFront, Application Load Balancer (ALB), Amazon API Gateway và AWS AppSync để bảo vệ website, ứng dụng web và API.
-<br>&emsp;• Kết hợp với AWS Shield để chống DDoS:
-<br>&emsp;Khi được triển khai cùng AWS Shield, hệ thống có thể giảm thiểu tác động của các cuộc tấn công DDoS quy mô lớn. AWS Shield chịu trách nhiệm bảo vệ ở tầng mạng, trong khi AWS WAF sẽ kiểm tra và chặn các request độc hại ở tầng ứng dụng.
-<br>&emsp;• Theo dõi và phân tích lưu lượng:
-<br>&emsp;AWS WAF có thể tích hợp với Amazon CloudWatch để thu thập log, theo dõi lưu lượng truy cập, phát hiện hành vi bất thường và hỗ trợ quản trị viên đưa ra các phương án xử lý phù hợp.
+<br>&emsp;CloudFront sử dụng mạng lưới hàng trăm Edge Locations trên toàn thế giới để cung cấp nội dung từ vị trí gần người dùng nhất, giúp giảm đáng kể độ trễ khi truy cập.
 
-TÌNH HUỐNG THỰC TẾ:
-Giả sử một website thương mại điện tử đang triển khai chương trình khuyến mãi lớn và có hàng nghìn người dùng truy cập cùng lúc.
+<br>&emsp;• **Giảm tải cho máy chủ gốc**
 
-Trong thời điểm này, kẻ tấn công có thể gửi hàng loạt request chứa mã SQL độc hại hoặc thực hiện các cuộc tấn công DDoS nhằm làm gián đoạn hệ thống.
+<br>&emsp;Các nội dung tĩnh sẽ được lưu trong bộ nhớ đệm của CloudFront. Khi người dùng tiếp theo truy cập cùng một nội dung, dữ liệu sẽ được trả về trực tiếp từ Edge Location mà không cần gửi yêu cầu đến máy chủ gốc.
 
-Kiến trúc triển khai như sau:
-User → AWS WAF → Application Load Balancer → EC2 Auto Scaling → Application Web Servers
+<br>&emsp;• **Tăng cường bảo mật**
 
-Trong kiến trúc này:
-<br>&emsp;+ AWS WAF sẽ kiểm tra toàn bộ request gửi đến hệ thống.
-<br>&emsp;+ Những request chứa mã độc hoặc có dấu hiệu bất thường sẽ bị chặn ngay tại lớp WAF.
-<br>&emsp;+ Application Load Balancer phân phối lưu lượng hợp lệ đến các máy chủ ứng dụng.
-<br>&emsp;+ Auto Scaling tự động mở rộng số lượng EC2 khi lưu lượng tăng cao.
-<br>&emsp;+ CloudWatch ghi nhận log và giám sát toàn bộ hoạt động của hệ thống.
-Nhờ đó, ứng dụng vẫn duy trì được tính sẵn sàng cao, đồng thời bảo vệ dữ liệu người dùng khỏi các cuộc tấn công phổ biến.
+<br>&emsp;CloudFront hỗ trợ HTTPS, SSL/TLS, AWS Shield Standard và có thể tích hợp với AWS WAF để bảo vệ website khỏi các cuộc tấn công phổ biến.
 
-KẾT LUẬN:
-Điều mình thấy ấn tượng ở AWS WAF là dịch vụ này không chỉ hoạt động như một tường lửa ứng dụng web thông thường mà còn có thể kết hợp với nhiều dịch vụ AWS khác để xây dựng một hệ thống bảo mật toàn diện.
+<br>&emsp;• **Tích hợp với nhiều dịch vụ AWS**
 
-Trong kiến trúc sử dụng AWS WAF kết hợp với Application Load Balancer và EC2 Auto Scaling, AWS WAF đóng vai trò là lớp bảo vệ đầu tiên, giúp kiểm tra và lọc toàn bộ request trước khi chúng đi vào hệ thống backend.
+<br>&emsp;CloudFront hoạt động hiệu quả cùng Amazon S3, Elastic Load Balancer (ELB), Amazon EC2, API Gateway và AWS Lambda để xây dựng các ứng dụng hiện đại.
 
-Khi kết hợp thêm với AWS Shield, CloudFront và CloudWatch, hệ thống có thể vừa chống lại các cuộc tấn công DDoS, vừa phát hiện và ngăn chặn các hành vi tấn công ở tầng ứng dụng.
+<br>&emsp;• **Theo dõi hiệu năng**
 
-Theo mình, đây là một dịch vụ rất đáng tìm hiểu khi học AWS vì nó liên quan trực tiếp đến các lĩnh vực quan trọng như Security, Networking, High Availability và Cloud Architecture.
+<br>&emsp;CloudFront có thể tích hợp với Amazon CloudWatch để giám sát số lượng yêu cầu, tỷ lệ cache, băng thông sử dụng và nhiều chỉ số quan trọng khác.
 
-Thông qua bài này, mình hiểu rõ hơn rằng bảo mật cần được triển khai ngay từ đầu thay vì chỉ xử lý khi sự cố xảy ra. Một hệ thống tốt không chỉ cần hoạt động ổn định mà còn phải đảm bảo an toàn cho dữ liệu và người dùng.
+## TÌNH HUỐNG THỰC TẾ
 
-Link tài liệu:
+Giả sử một doanh nghiệp xây dựng website giới thiệu sản phẩm và lưu trữ toàn bộ hình ảnh trên Amazon S3.
 
-https://docs.aws.amazon.com/.../develope.../waf-chapter.html
+Nếu người dùng tại Việt Nam, Nhật Bản, Mỹ và Châu Âu đều truy cập trực tiếp vào S3 thì thời gian tải hình ảnh có thể khác nhau do khoảng cách địa lý.
 
-https://docs.aws.amazon.com/.../aws-waf-and-shield.html
+Khi triển khai Amazon CloudFront, kiến trúc sẽ như sau:
 
-![Ảnh](/cloud/images/3-BlogsPosted/Blog2.jpg)
+**Người dùng → Amazon CloudFront → Amazon S3**
+
+Trong mô hình này:
+
+<br>&emsp;+ Người dùng gửi yêu cầu đến CloudFront.
+
+<br>&emsp;+ CloudFront kiểm tra xem nội dung đã được lưu trong bộ nhớ đệm hay chưa.
+
+<br>&emsp;+ Nếu dữ liệu đã tồn tại, CloudFront trả kết quả ngay từ Edge Location gần nhất.
+
+<br>&emsp;+ Nếu chưa có, CloudFront sẽ lấy dữ liệu từ Amazon S3, lưu vào bộ nhớ đệm và gửi về cho người dùng.
+
+Nhờ đó, các lần truy cập tiếp theo sẽ có tốc độ nhanh hơn, giảm lượng truy cập trực tiếp đến máy chủ gốc và tiết kiệm chi phí băng thông.
+
+## KẾT LUẬN
+
+Theo mình, Amazon CloudFront là một trong những dịch vụ quan trọng khi xây dựng các ứng dụng có lượng người dùng lớn hoặc phục vụ khách hàng ở nhiều khu vực khác nhau.
+
+Không chỉ giúp tăng tốc độ tải trang, CloudFront còn giảm tải cho máy chủ, cải thiện khả năng mở rộng và tăng cường bảo mật khi kết hợp với AWS WAF và AWS Shield.
+
+Qua quá trình tìm hiểu dịch vụ này, mình hiểu rõ hơn về cách AWS sử dụng mạng lưới CDN để tối ưu hiệu năng cho website và ứng dụng trên phạm vi toàn cầu. Đây là một dịch vụ rất phù hợp để học khi tìm hiểu về Cloud Computing, đặc biệt trong các chủ đề như tối ưu hiệu năng, phân phối nội dung và kiến trúc hệ thống hiện đại.
+
+## Tài liệu tham khảo
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
+
+![Picture](/cloud/images/3-BlogsPosted/Blog2.jpg)

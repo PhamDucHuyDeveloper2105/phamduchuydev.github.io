@@ -1,76 +1,77 @@
 ---
 title: "Blog 2"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# AWS WAF: A SHIELD PROTECTING WEB APPLICATIONS FROM COMMON ATTACKS
+# AMAZON CLOUDFRONT: DELIVERING CONTENT FASTER AROUND THE WORLD
 
-When deploying a website or application to the internet, many people often focus on optimizing performance, scaling the system, or improving the user experience.
+As websites and web applications continue to grow, users expect pages to load quickly regardless of where they are located. However, when all website content is served from a single server, users who are far from that server may experience higher latency and slower loading times.
 
-However, an equally important factor is security.
+To solve this challenge, AWS provides **Amazon CloudFront**, a global Content Delivery Network (CDN) service that delivers content with low latency and high transfer speeds. Instead of sending every request to the origin server, CloudFront caches content at edge locations around the world, allowing users to receive data from the location closest to them.
 
-In reality, web applications are constantly facing numerous threats such as SQL Injection, Cross-Site Scripting (XSS), Bot Traffic, or Distributed Denial of Service (DDoS) attacks. Without proper protection, these attacks can disrupt services, compromise data, and degrade the user experience.
+By reducing the distance between users and website content, CloudFront improves application performance, decreases server workload, and provides a better user experience.
 
-To address this problem, AWS offers the AWS WAF (Web Application Firewall) service, which protects web applications from common threats while allowing for flexible management and construction of security policies.
+## KEY FEATURES
 
-In practice, AWS WAF is often deployed with Application Load Balancer (ALB), Amazon CloudFront, API Gateway, and AWS Shield to build a multi-layered security system for applications.
+<br>&emsp;• **Global Content Delivery**
 
-KEY FEATURES:
+<br>&emsp;Amazon CloudFront uses hundreds of edge locations worldwide to deliver website content from the nearest location, reducing latency and improving page loading speed.
 
-• Protecting applications from common attacks:
+<br>&emsp;• **Content Caching**
 
-AWS WAF can detect and block many common attack types such as SQL Injection, Cross-Site Scripting (XSS), Local File Inclusion, and other malicious requests before they reach the application.
+<br>&emsp;Frequently accessed static content such as images, CSS files, JavaScript, videos, and downloadable files is cached at edge locations, reducing repeated requests to the origin server.
 
-• Create custom security rules:
+<br>&emsp;• **Enhanced Security**
 
-Users can build custom rules based on IP address, country, HTTP header, URI, or many other conditions to meet the specific security requirements of each system.
+<br>&emsp;CloudFront supports HTTPS, SSL/TLS encryption, AWS Shield Standard, and integrates with AWS WAF to help protect websites against common web attacks.
 
-• Integrate with multiple AWS services:
+<br>&emsp;• **Seamless AWS Integration**
 
-AWS WAF can work with Amazon CloudFront, Application Load Balancer (ALB), Amazon API Gateway, and AWS AppSync to protect websites, web applications, and APIs.
+<br>&emsp;CloudFront works seamlessly with Amazon S3, Application Load Balancer, Amazon EC2, API Gateway, and AWS Lambda to build secure and scalable web applications.
 
-• Combine with AWS Shield for DDoS protection:
+<br>&emsp;• **Performance Monitoring**
 
-When deployed with AWS Shield, the system can mitigate the impact of large-scale DDoS attacks. AWS Shield is responsible for network layer protection, while AWS WAF inspects and blocks malicious requests at the application layer.
-• Traffic Monitoring and Analysis:
+<br>&emsp;Users can monitor traffic, cache hit ratio, request statistics, and bandwidth usage through Amazon CloudWatch, making it easier to optimize application performance.
 
-AWS WAF can integrate with Amazon CloudWatch to collect logs, monitor traffic, detect anomalies, and assist administrators in implementing appropriate solutions.
+## REAL-WORLD SCENARIO
 
-REAL-WORLD SCENARIO:
-Suppose an e-commerce website is running a large promotional campaign and has thousands of users accessing it simultaneously.
+Imagine a company hosting its website images, videos, and static files in an Amazon S3 bucket.
 
-During this time, an attacker could send a large number of requests containing malicious SQL code or carry out DDoS attacks to disrupt the system.
+Without a CDN, every user request is sent directly to the S3 bucket. As the number of users increases—especially those accessing the website from different countries—the loading time becomes longer due to network latency.
 
-The deployment architecture is as follows:
-User → AWS WAF → Application Load Balancer → EC2 Auto Scaling → Application Web Servers
+A typical deployment architecture is:
+
+**Users → Amazon CloudFront → Amazon S3**
 
 In this architecture:
-<br>&emsp;+ AWS WAF will inspect all requests sent to the system.
-<br>&emsp;+ Requests containing malicious code or exhibiting unusual behavior will be blocked at the WAF layer.
-<br>&emsp;+ Application Load Balancer distributes legitimate traffic to application servers.
-<br>&emsp;+ Auto Scaling automatically scales the number of EC2 instances when traffic increases.
-<br>&emsp;+ CloudWatch logs and monitors all system activity.
 
-As a result, the application maintains high availability while protecting user data from common attacks.
+<br>&emsp;+ Users send requests to Amazon CloudFront.
 
-CONCLUSION:
-What I find impressive about AWS WAF is that it not only functions as a typical web application firewall but can also be combined with many other AWS services to build a comprehensive security system.
+<br>&emsp;+ CloudFront checks whether the requested content already exists in the nearest edge location.
 
-In an architecture using AWS WAF in conjunction with Application Load Balancer and EC2 Auto Scaling, AWS WAF acts as the first line of defense, inspecting and filtering all requests before they enter the backend.
+<br>&emsp;+ If the content is cached, it is immediately delivered to the user.
 
-When combined with AWS Shield, CloudFront, and CloudWatch, the system can both defend against DDoS attacks and detect and prevent application-layer attacks.
+<br>&emsp;+ If not, CloudFront retrieves the content from Amazon S3, stores it in the cache, and delivers it to the user.
 
-In my opinion, this is a very worthwhile service to learn about when studying AWS because it directly relates to important areas such as Security, Networking, High Availability, and Cloud Architecture.
+<br>&emsp;+ Future requests for the same content are served directly from the edge location, significantly improving response time.
 
-Through this article, I understand better that security needs to be implemented from the outset, rather than just dealing with incidents when they occur. A good system not only needs to operate stably but also ensure the safety of data and users.
+As a result, website performance improves, bandwidth costs are reduced, and the origin server receives fewer requests.
 
-Document link:
+## CONCLUSION
 
-https://docs.aws.amazon.com/.../develope.../waf-chapter.html
+What I find most valuable about Amazon CloudFront is its ability to improve website performance without requiring significant changes to the application itself. By caching content closer to users, CloudFront reduces latency, accelerates page loading, and enhances the overall browsing experience.
 
-https://docs.aws.amazon.com/.../aws-waf-and-shield.html
+When combined with services such as Amazon S3, Application Load Balancer, AWS WAF, AWS Shield, and Amazon CloudWatch, CloudFront becomes an important component in building highly available, secure, and scalable cloud architectures.
+
+In my opinion, Amazon CloudFront is an essential AWS service for anyone learning cloud computing because it introduces key concepts such as Content Delivery Networks (CDN), caching, performance optimization, and global application delivery.
+
+Through learning this service, I gained a better understanding of how AWS improves application performance while maintaining security and scalability for users around the world.
+
+## AWS Documentation
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
 
 ![Picture](/cloud/images/3-BlogsPosted/Blog2.jpg)
