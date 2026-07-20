@@ -39,7 +39,7 @@ The AWS services used in this workshop include:
 
 1. [Introduction](5.1-Workshop-overview/)
 2. [Prerequisites](5.2-Prerequiste/)
-3. [Configure DynamoDB](5.3-Configure-DynamoDB/)
+3. [Configure DynamoDB](5.3-Configure-RDS-Database/)
 4. [Configure Amazon S3](5.4-Configure-S3/)
 5. [Configure Amazon SES & SNS](5.5-Configure-SES/)
 6. [Deploy Backend on EC2](5.6-Deploy-EC2/)

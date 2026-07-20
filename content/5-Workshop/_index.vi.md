@@ -42,7 +42,7 @@ Các dịch vụ AWS được sử dụng trong workshop gồm:
 
 1. [Giới thiệu](5.1-Workshop-overview/)
 2. [Các bước chuẩn bị](5.2-Prerequiste/)
-3. [Cấu hình DynamoDB](5.3-Configure-DynamoDB/)
+3. [Cấu hình DynamoDB](5.3-Configure-RDS-Database/)
 4. [Cấu hình Amazon S3](5.4-Configure-S3/)
 5. [Cấu hình Amazon SES & SNS](5.5-Configure-SES/)
 6. [Triển khai Backend trên EC2](5.6-Deploy-EC2/)
