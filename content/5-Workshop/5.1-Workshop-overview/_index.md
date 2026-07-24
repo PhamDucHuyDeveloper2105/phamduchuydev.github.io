@@ -33,7 +33,7 @@ The workshop covers the deployment and configuration of the following AWS servic
 
 By following this workshop, readers will learn how to prepare the AWS environment, deploy both frontend and backend applications, configure database and storage services, implement security best practices, monitor system performance, and perform resource cleanup after deployment.
 
-![AWS Architecture](drawio.png)
+![AWS Architecture](architecture.png)
 
 ### System Flow
 
